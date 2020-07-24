@@ -1,33 +1,52 @@
 import React, { useState} from 'react';
 import { Router } from '@reach/router';
+import List from './List';
+import New from './New';
+import Details from './Details';
+import Edit from './Edit';
+//Bootstrap
 import Button from 'react-bootstrap/Button';
 
 const Exam = (props) => {
 
-  // const [style] = useState({color: "purple"})
-  // const [author, setAuthor] = useState({name: ""})
+  const [pet, setPet] = useState({
+    name:"",
+    type:"",
+    description: "",
+    skills:{
+        skill_1:"",
+        skill_2:"",
+        skill_3:""
+    }
+})
+const [pets, setPets] = useState([])
 
   return (
     <div>
-      <h1>Home Page</h1>
-      {/* <Router>
-        <AuthorList
-          style={style}
+      <Router>
+        <List
           path="/"
         />
-        <AuthorNew
-          style={style}
-          author={author}
-          setAuthor={setAuthor}
-          path="/new"
+        <New
+          pet={pet}
+          setPet={setPet}
+          path="/pets/new"
         />
-        <AuthorEdit
-          style={style}
-          author={author}
-          setAuthor={setAuthor}
-          path="/edit/:id"
+        <Details
+          pet={pet}
+          setPet={setPet}
+          pets={pets}
+          setPets={setPets}
+          path="/pets/:id"
+        />
+        <Edit
+          pet={pet}
+          setPet={setPet}
+          pets={pets}
+          setPets={setPets}
+          path="/pets/:id/edit"
           />
-      </Router> */}
+      </Router>
     </div>
   )
 }

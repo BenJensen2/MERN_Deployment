@@ -1,5 +1,18 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  padding: 20px;
+}
+
+h1{
+  display: inline-block;
+  justify-items: flex-start;
+}
+.Navbar{
+  display: flex;
+}
+.topLink{
+  display: inline-block;
+  justify-items: flex-end;
 }
 
 .App-logo {

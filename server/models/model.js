@@ -1,21 +1,27 @@
 const mongoose = require('mongoose');
 
 const ModelSchema = new mongoose.Schema({
-  title: {
+  name: {
     type: String,
     required: [true,"is required"],
-    minlength: [2, "Product name must be at least 2 characters in length"]
+    minlength: [3, "must be at least 3 characters in length"]
   },
 
-  price: {
-    type: Number,
-    required: true,
+  type: {
+    type: String,
+    required: [true,"is required"],
+    minlength: [3, "must be at least 3 characters in length"]
   },
 
   description: {
     type: String,
-    required: true,
-    minlength: [10, "Product description must have at least 10 characters"]
+    required: [true,"is required"],
+    minlength: [3, "must be at least 3 characters in length"]
+  },
+  skills: {
+    skill_1:{type: String},
+    skill_2:{type: String},
+    skill_3:{type: String},
   }
 },
 {timestamps: true})
